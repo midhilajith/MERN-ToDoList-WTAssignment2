@@ -1,0 +1,79 @@
+:root {
+  --bg: #eef2f6;
+  --card: #ffffff;
+  --ink: #1b2a3a;
+  --muted: #6b7b8c;
+  --line: #d9e1e9;
+  --accent: #1f6f78;
+  --accent-ink: #ffffff;
+  --danger: #b3382c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 16px 64px;
+}
+
+.header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; }
+.header h1 { margin: 0; font-size: 2rem; letter-spacing: -0.02em; }
+.count { margin: 0; color: var(--muted); }
+
+.task-form { display: flex; gap: 8px; margin-bottom: 16px; }
+.task-form input {
+  flex: 1;
+  padding: 12px 14px;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+button {
+  font: inherit;
+  padding: 10px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.08); }
+button.ghost { background: transparent; color: var(--accent); }
+button.danger { background: transparent; color: var(--danger); border-color: var(--danger); }
+
+input:focus-visible, button:focus-visible {
+  outline: 3px solid #7fc4cb;
+  outline-offset: 1px;
+}
+
+.task-list { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+.task-item { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.task-item:last-child { border-bottom: 0; }
+.task-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent); flex: none; }
+.title { flex: 1; word-break: break-word; }
+.edit-input { flex: 1; padding: 8px 10px; font: inherit; border: 1px solid var(--accent); border-radius: 6px; }
+.actions { display: flex; gap: 6px; }
+.actions button { padding: 6px 10px; font-size: 0.875rem; }
+
+/* B4: completed tasks look different - struck through and faded */
+.task-item.done .title { text-decoration: line-through; color: var(--muted); }
+
+.empty { color: var(--muted); text-align: center; padding: 24px 0; }
+.error { background: #fbe9e7; color: var(--danger); padding: 10px 14px; border-radius: 8px; }
+
+@media (max-width: 480px) {
+  .header { flex-direction: column; gap: 4px; }
+  .task-item { flex-wrap: wrap; }
+  .actions { width: 100%; justify-content: flex-end; }
+}
