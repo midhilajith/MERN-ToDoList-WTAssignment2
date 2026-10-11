@@ -1,3 +1,4 @@
+// Main React component for the MERN To-Do List application
 import { useEffect, useState } from "react";
 import { getTasks, createTask, updateTask, deleteTask } from "./api";
 import TaskForm from "./components/TaskForm";
