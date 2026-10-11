@@ -88,7 +88,14 @@ Task document:
 ```
 
 ## Screenshots
-See the `screenshots/` folder: adding a task, completing a task, deleting a task, and the merged pull requests.
+
+The `screenshots/` folder contains the required screenshots demonstrating the working application and GitHub workflow:
+
+1. `ss 1.png` – Adding a task
+2. `ss 2.png` – Completing a task
+3. `ss 3.png` – Deleting a task
+4. `ss 4.png` – Application demonstration
+5. `ss 5.png` – Merged pull requests
 
 ## Security notes
 - The MongoDB connection string lives in `backend/.env`, which is git-ignored. Only `.env.example` is committed.
